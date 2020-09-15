@@ -76,3 +76,98 @@ const options = () => {
       return options()
     }
     console.log(powerButton())
+
+// Model a vending machine
+
+// - a vending machine is an object
+// - it has an array of snacks (make 3 snacks)
+// - snacks are objects that have a name and a price
+// - a vending machine has a function vend that allows user to enter the array position (a number) of the snack and then that snack will be returned
+// - Be able to call vendingMachine.vend() with a valid integer to return a snack
+
+const vendingMachine = {
+    snacks: [ 
+      {name: "cookies",
+        price: 2 },
+      {name: "soda",
+        price: 1 },
+      {name: "chips",
+        price: 2 }  
+      ],
+    //I got this solution off of https://wdi-sg.github.io/gitbook-2019/02-js/js-oop/readme.html when I got stuck, and I don't know why it will only work with this function notation. I tried it with the function declaration and with the const x = () => {} ways and they wouldnt work 
+    vend (option) {
+      return vendingMachine.snacks[option].name;
+      }
+    };
+    
+    vendingMachine.vend(0);
+
+    // ## Callbacks
+    // 1. Make a function `add` that takes two arguments (numbers) and sums them together
+    // 1. Make a function `subtract` that takes two arguments (numbers) and subtracts them
+    // 1. Make a function `multiply` that takes two arguments and multiplies them
+    // 1. Make a function `divide` that takes two arguments and divides them
+    // 1. Make a function `calculate` that takes three arguments. Assume the two arguments are a number  ie `num1, num2` and a function called `operates` (a callback).
+    // 1. Make it so that when `calculate` is invoked, the callback "operates" on the numbers and returns the value.
+    // 1. Call `calculate` 4 times, each time using one of the operation functions you wrote
+    
+    const add = (num1,num2) => {
+        return num1+num2
+      };
+      
+      const subtract = (num1,num2) => {
+        return num1-num2
+      };
+      
+      const multiply = (num1,num2) => {
+        return num1*num2
+      };
+      
+      const divide = (num1,num2) => {
+        return num1/num2
+      };
+      
+      const calculate = (num1,num2,operates) => {
+        var x = num1;
+        var y = num2;
+        //console.log(operates(x,y));
+        return operates(x,y);
+      };
+      
+      calculate(1,2,add);
+      calculate(3,2,subtract);
+      calculate(1,2,multiply);
+      calculate(10,5,divide);
+
+    
+// Clean up this code, so that it works and has function definitions in the correct place
+//       bar();
+//       const bar = () => {
+//           console.log('bar here');
+//       }
+//       foo();
+      
+//       const foo = () => {
+//           console.log('foo here');
+//       }
+
+    const bar = () => {
+        console.log('bar here');
+        }
+    bar();
+    
+    const foo = () => {
+        console.log('foo here');
+        }
+    foo();
+      
+// #### Error reading
+// What is meant by the error(s) this produces?
+
+//         foo();
+//         const foo ()=>{
+//             console.log('hi');
+//         }
+
+//ANSWER- The function foo has not been defined yet, so when it's being called, javascript doesn't know what to run
+
