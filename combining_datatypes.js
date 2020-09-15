@@ -38,3 +38,5 @@ var apartmentBuildinng = [
   ]
   
   console.log(apartmentBuildinng[0][2])
+
+//   Create a function `knit` that returns an object that has the following kinds of properties `item`: `scarf`, `size` : `6ft` etc.  Log a value of that object (hint: call the function and then call a property on the return value).
